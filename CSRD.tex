@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{book}
+\documentclass[a4paper,10pt,openright]{book}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -10,16 +10,38 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{pdfpages}
+\usepackage{tocbasic}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{threeparttable}
+\usepackage{longtable}
+
+\graphicspath{ {./div/} }
 
 \usepackage[margin=1.5cm]{geometry} 
 
-\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{0.75cm}
+
+% \newcommand{\enablediversor}{%
+%   \setlength{\columnseprule}{1pt}% Your desired rule width
+%   \columnseprulecolor{\color{black}}% Your desired rule color
+%   \setlength{\columnsep}{1cm}% Ensure columnsep is also set if you rely on it
+% }
+%
+% \newcommand{\disablediversor}{%
+%   \setlength{\columnseprule}{0pt}% Make the rule width zero
+%   \columnseprulecolor{\color{white}}% Optionally make it white if 0pt doesn't fully hide it
+%   \setlength{\columnsep}{1cm}% Keep columnsep consistent if needed
+% }
+%
+
 
 % pakiet babel lub jego odpowiednik
 
-\title{CYPHER SYSTEM REFERENCE DOCUMENT 2025-05-05 final}
-\author{Monte Cook Games (source material) \and Szymon "Kaworu" Brycki (LaTeX version)}
-\date{\today}
+% \title{CYPHER SYSTEM REFERENCE DOCUMENT \\ 2025-05-05 final}
+% \author{Monte Cook Games (source material) \and Szymon "Kaworu" Brycki (LaTeX version)}
+% \date{\today}
 
 \setmainfont{FreeSerif}[
   UprightFont = FreeSerif,          % Normalny styl (regular)
@@ -38,16 +60,94 @@
     urlcolor=black,
 }
 
-\makeindex
+\makeindex[intoc]
+
+\newcommand{\myability }[1] {{\textbf{#1}\index{Abilities!Alphabetic!#1}\label{sec:#1}}}
+
+\renewcommand*{\listoftables}{\listoftoc[\listtablename]{lot}}
+
+\setuptoc{lot}{leveldown,totoc}
+
+\makeatletter
+\def\Year#1{%
+  \def\yy@##1##2##3##4;{##1##2##3##4}%
+  \expandafter\yy@#1;
+}
+\makeatother
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \begin{document}
 
-\maketitle
+\includepdf[pages=1, noautoscale=true, width=\paperwidth]{graphics/okładka ENG.pdf}
+
+% \disablediversor
+
+\begin{titlepage}
+	\centering
+	{\Huge \bfseries \title _Cypher System Reference Document \par}
+	\vspace{1cm}
+	{\large \itshape LaTeX version \par}
+	{\large \textbf{By}: Copyright © 2025 Monte Cook Games \par}
+	{\large \textbf{LaTeX version}: Copyright © \Year{\the\year} Szymon ``Kaworu'' Brycki \par}
+	\vspace{1cm}
+	{\large \textbf{D20 div}: Ramona \href{https://bsky.app/profile/alderdoodle.bsky.social}{‪@alderdoodle.bsky.social}‬\par}
+	\vspace{1cm}
+	{\large Created in \LaTeX ~ technology \par}
+	\vspace{1cm}
+	{\large \today \par}
+\end{titlepage}
+
+% \maketitle
+
+\begin{multicols}{2}
 \tableofcontents
+\end{multicols}
 
 \include{src/Core Rules.tex}
 \include{src/Types.tex}
-\include{src/Character Options}
+\include{src/Character Options.tex}
+\include{src/Further Customization.tex}
+\include{src/Descriptor.tex}
+\include{src/Focus.tex}
+\include{src/Abilities-beginning.tex}
+
+% abilities alphabetic files below
+
+\include{src/Abilities/A.tex}
+\include{src/Abilities/B.tex}
+\include{src/Abilities/C.tex}
+\include{src/Abilities/D.tex}
+\include{src/Abilities/E.tex}
+\include{src/Abilities/F.tex}
+\include{src/Abilities/G.tex}
+\include{src/Abilities/H.tex}
+\include{src/Abilities/I.tex}
+\include{src/Abilities/J.tex}
+\include{src/Abilities/K.tex}
+\include{src/Abilities/L.tex}
+\include{src/Abilities/M.tex}
+\include{src/Abilities/N.tex}
+\include{src/Abilities/O.tex}
+\include{src/Abilities/P.tex}
+\include{src/Abilities/Q.tex}
+\include{src/Abilities/R.tex}
+\include{src/Abilities/S.tex}
+\include{src/Abilities/T.tex}
+\include{src/Abilities/U.tex}
+\include{src/Abilities/V.tex}
+\include{src/Abilities/W.tex}
+\include{src/Abilities/Y.tex}
+\include{src/Abilities/z.tex}
+
+% end of alphabetic abilities, normal stuff goes below
+
+\include{src/Equipment.tex}
+\include{src/Cyphers and Artifacts.tex}
+\include{src/Rules of the Game.tex}
+\include{src/Encounters.tex}
+
+\part{Appendices}
 
 \listoftables
 \printindex
