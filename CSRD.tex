@@ -16,6 +16,11 @@
 \usepackage{makecell}
 \usepackage{threeparttable}
 \usepackage{longtable}
+\usepackage{nicematrix}
+\usepackage{calc}
+\usepackage{booktabs,caption}
+% \usepackage[flushleft]{threeparttable}
+\usepackage{ltxtable}
 
 \graphicspath{ {./div/} }
 
@@ -61,8 +66,18 @@
 }
 
 \makeindex[intoc]
+\makeindex[name= SFCre, title=Science Fiction Creatures Index, intoc]
+\makeindex[name= HorrorCre, title=Horror Creatures Index, intoc]
+\makeindex[name= CoreCre, title=Core Creatures Index, intoc]
+\makeindex[name= AllCre, title=All Creatures Index, intoc]
+\makeindex[name= CnA, title=Cyphers and Artifacts Index, intoc]
 
 \newcommand{\myability }[1] {{\textbf{#1}\index{Abilities!Alphabetic!#1}\label{sec:#1}}}
+
+\newcommand{\mydiv } {
+\begin{center} 
+\includegraphics[width=\textwidth]{d20div.png}
+\end{center}}
 
 \renewcommand*{\listoftables}{\listoftoc[\listtablename]{lot}}
 
@@ -100,6 +115,7 @@
 
 % \maketitle
 
+\part{Table of Contents}
 \begin{multicols}{2}
 \tableofcontents
 \end{multicols}
@@ -146,9 +162,110 @@
 \include{src/Cyphers and Artifacts.tex}
 \include{src/Rules of the Game.tex}
 \include{src/Encounters.tex}
+\include{src/Cooperative actions.tex}
+\include{src/Followers.tex}
+\include{src/EXP.tex}
+\include{src/GM Intrusion.tex}
+\include{src/Character Arcs.tex}
+\include{src/GM Awards.tex}
+\include{src/Spending EXP.tex}
+\include{src/Character Advancement.tex}
 
+% Core Bestiary below
+
+\include{src/Core Bestiary/Bestiary.tex}
+
+% Magical Rules go below
+
+\include{src/Magical Rules/Crafting Magical Items.tex}
+\include{src/Magical Rules/Ritual Magic.tex}
+\include{src/Magical Rules/Magical Rules.tex}
+\include{src/Magical Rules/Treasure and Traps.tex}
+\include{src/Magical Rules/Fantasy Types.tex}
+\include{src/Magical Rules/Fantasy Creatures.tex}
+\include{src/Magical Rules/Fantasy Equipment.tex}
+\include{src/Magical Rules/Fantasy Artifacts.tex}
+\include{src/Magical Rules/Fantasy Species.tex}
+\include{src/Magical Rules/Spells.tex}
+
+% Modern Rules go below
+
+\include{src/Modern Rules/Characters for a Modern Game.tex}
+\include{src/Modern Rules/Modern Creatures.tex}
+\include{src/Modern Rules/Additional Modern Equipment.tex}
+\include{src/Modern Rules/PCs as Children.tex}
+
+% Sci Fi Rules go Below
+
+\include{src/Science Fiction Rules/Start.tex}
+\include{src/Science Fiction Rules/Harder SF.tex}
+\include{src/Science Fiction Rules/Void Rules.tex}
+\include{src/Science Fiction Rules/Spacecraft combat.tex}
+\include{src/Science Fiction Rules/Psionics.tex}
+\include{src/Science Fiction Rules/Posthuman Upgrades.tex}
+\include{src/Science Fiction Rules/Salvage from a Spacecraft.tex}
+\include{src/Science Fiction Rules/FTL Instability.tex}
+\include{src/Science Fiction Rules/Types for SciFi Game.tex}
+\include{src/Science Fiction Rules/SciFi Creatures.tex}
+\include{src/Science Fiction Rules/Additional Sci Fi Equipment.tex}
+\include{src/Science Fiction Rules/Equipment and Weapons as Artifacts.tex}
+\include{src/Science Fiction Rules/Vehicles.tex}
+\include{src/Science Fiction Rules/Effects of Gravity.tex}
+\include{src/Science Fiction Rules/Science Fiction Species Descriptors.tex}
+
+% Superhero Rules go below
+
+\include{src/Superhero Rules/Beginning.tex}
+\include{src/Superhero Rules/Superhero Rules.tex}
+\include{src/Superhero Rules/Superhero Artifacts.tex}
+\include{src/Superhero Rules/Popular Heroes in the Cypher System.tex}
+\include{src/Superhero Rules/Power Source.tex}
+\include{src/Superhero Rules/Superhero Character Options.tex}
+
+% Horror Rules Go below
+
+\include{src/Horror Rules/Optional Rules for Horror.tex}
+\include{src/Horror Rules/Horror Bestiary.tex}
+\include{src/Horror Rules/Horror Artifacts and Cyphers.tex}
+\include{src/Horror Rules/Horror Ending.tex}
+
+% Romance Rules go below
+
+\include{src/Romance Rules/Romance Rules.tex}
+
+% Post-apo goes below
+
+\include{src/Post-Apocaliptic Rules/Beginning.tex}
+\include{src/Post-Apocaliptic Rules/Post-Apo Bestiary.tex}
+\include{src/Post-Apocaliptic Rules/Additional Post-Apocaliptic Equipment.tex}
+\include{src/Post-Apocaliptic Rules/Scavenging.tex}
+\include{src/Post-Apocaliptic Rules/Post-Apo Artifacts.tex}
+\include{src/Post-Apocaliptic Rules/Post-Apo Species Descriptors.tex}
+
+% Fairy tales go below
+
+\include{src/Fairy Tales Rules/Beginning.tex}
+\include{src/Fairy Tales Rules/Fairy Tales Bestiary.tex}
+\include{src/Fairy Tales Rules/Fairy Tale Artifacts.tex} %%% DOPISAĆ TABELĘ %%%
+
+% Historical Rules go below
+\include{src/Historical Rules/Beginning.tex}
+\include{src/Historical Rules/Historical Bestiary.tex}
+\include{src/Historical Rules/Historical Games.tex}
+\include{src/Historical Rules/Historical Artifacts.tex}
+
+% Cyphers go below
+
+\include{src/Cyphers/Cyphers.tex}
 \part{Appendices}
 
 \listoftables
+
 \printindex
+\printindex[CoreCre]
+\printindex[SFCre]
+\printindex[HorrorCre]
+\printindex[AllCre]
+\printindex[CnA]
+
 \end{document}
