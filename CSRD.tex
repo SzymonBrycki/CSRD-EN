@@ -71,8 +71,27 @@
 \makeindex[name= CoreCre, title=Core Creatures Index, intoc]
 \makeindex[name= AllCre, title=All Creatures Index, intoc]
 \makeindex[name= CnA, title=Cyphers and Artifacts Index, intoc]
+\makeindex[name= Abi, title=Abilities Index, intoc]
 
-\newcommand{\myability }[1] {{\textbf{#1}\index{Abilities!Alphabetic!#1}\label{sec:#1}}}
+\newcommand{\myability }[1] {{\textbf{#1}\index{Abilities!Alphabetic!#1}\index[Abi]{#1}\label{sec:#1}}}
+
+\newcommand{\varCypher }[1] {
+\subsection{#1}\index{Cyphers!Various!#1}
+\index[CnA]{Cyphers by genre!Various!#1}
+\index[CnA]{Cyphers by name!#1}
+}
+
+\newcommand{\powCypher }[1] {
+\subsection{#1}\index{Cyphers!Power Boost!#1}
+\index[CnA]{Power Boost Cyphers!#1}
+\index[CnA]{Cyphers by name!#1}
+}
+
+\newcommand{\FanArtInd }[1] {
+\subsection[#1]\index{Artifacts!#1}
+\index[CnA]{Artifacts by genre!Fantasy!#1}
+\index[CnA]{Artifacts by name!#1}
+}
 
 \newcommand{\mydiv } {
 \begin{center} 
@@ -257,11 +276,21 @@
 % Cyphers go below
 
 \include{src/Cyphers/Cyphers.tex}
+
+%Artifacts go below
+
+\include{src/Artifacts/Artifacts.tex}
+
+% Running the CS goes below 
+
+\include{src/Running the CS/Running the CS.tex}
+
 \part{Appendices}
 
 \listoftables
 
 \printindex
+\printindex[Abi]
 \printindex[CoreCre]
 \printindex[SFCre]
 \printindex[HorrorCre]
