@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt,openright]{book}
-\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc} 
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 
@@ -20,7 +20,8 @@
 \usepackage{calc}
 \usepackage{booktabs,caption}
 % \usepackage[flushleft]{threeparttable}
-\usepackage{ltxtable}
+\usepackage{ltxtable} 
+\usepackage{xltabular}
 
 \graphicspath{ {./div/} }
 
@@ -75,28 +76,32 @@
 
 \newcommand{\myability }[1] {{\textbf{#1}\index{Abilities!Alphabetic!#1}\index[Abi]{#1}\label{sec:#1}}}
 
-\newcommand{\varCypher }[1] {
-\subsection{#1}\index{Cyphers!Various!#1}
-\index[CnA]{Cyphers by genre!Various!#1}
-\index[CnA]{Cyphers by name!#1}
+\newcommand{\varCypher }[1] { 
+\subsection{#1}
+\index{Cyphers!Various!{#1}}
+\index[CnA]{Cyphers by genre!Various!{#1}}
+\index[CnA]{Cyphers by name!{#1}}
 }
 
 \newcommand{\powCypher }[1] {
-\subsection{#1}\index{Cyphers!Power Boost!#1}
-\index[CnA]{Power Boost Cyphers!#1}
-\index[CnA]{Cyphers by name!#1}
+\subsection{#1}
+\index{Cyphers!Power Boost!{#1}}
+\index[CnA]{Power Boost Cyphers!{#1}}
+\index[CnA]{Cyphers by name!{#1}}
 }
 
 \newcommand{\FanArtInd }[1] {
-\subsection[#1]\index{Artifacts!#1}
-\index[CnA]{Artifacts by genre!Fantasy!#1}
-\index[CnA]{Artifacts by name!#1}
+\subsection{#1}
+\index{Artifacts!Fantasy Artifacts!{#1}}
+\index[CnA]{Artifacts by genre!Fantasy!{#1}}
+\index[CnA]{Artifacts by name!{#1}}
 }
 
 \newcommand{\mydiv } {
 \begin{center} 
 \includegraphics[width=\textwidth]{d20div.png}
-\end{center}}
+\end{center}
+}
 
 \renewcommand*{\listoftables}{\listoftoc[\listtablename]{lot}}
 
@@ -207,6 +212,10 @@
 \include{src/Magical Rules/Fantasy Species.tex}
 \include{src/Magical Rules/Spells.tex}
 
+% Modern Fantasy Rules go below
+
+\include{src/Modern Fantasy Rules/modern Fantasy Rules.tex}
+
 % Modern Rules go below
 
 \include{src/Modern Rules/Characters for a Modern Game.tex}
@@ -260,6 +269,7 @@
 \include{src/Post-Apocaliptic Rules/Scavenging.tex}
 \include{src/Post-Apocaliptic Rules/Post-Apo Artifacts.tex}
 \include{src/Post-Apocaliptic Rules/Post-Apo Species Descriptors.tex}
+\include{src/Post-Apocaliptic Rules/Post-Apo Additional Rules.tex}
 
 % Fairy tales go below
 
@@ -273,6 +283,10 @@
 \include{src/Historical Rules/Historical Games.tex}
 \include{src/Historical Rules/Historical Artifacts.tex}
 
+%Weird West Rules go below
+
+\include{src/Weird West Rules/Weird West.tex}
+
 % Cyphers go below
 
 \include{src/Cyphers/Cyphers.tex}
@@ -284,6 +298,10 @@
 % Running the CS goes below 
 
 \include{src/Running the CS/Running the CS.tex}
+
+% Cypher Shorts go below
+
+\include{src/Cypher Shorts/Cypher Shorts.tex}
 
 \part{Appendices}
 
