@@ -73,6 +73,7 @@
 \makeindex[name= AllCre, title=All Creatures Index, intoc]
 \makeindex[name= CnA, title=Cyphers and Artifacts Index, intoc]
 \makeindex[name= Abi, title=Abilities Index, intoc]
+\makeindex[name= WWCre, title= Weird West Creatures Index, intoc]
 
 \newcommand{\myability }[1] {{\textbf{#1}\index{Abilities!Alphabetic!#1}\index[Abi]{#1}\label{sec:#1}}}
 
@@ -214,6 +215,9 @@
 
 % Modern Fantasy Rules go below
 
+\part{Modern Fantasy Rules}
+
+\include{src/Modern Fantasy Rules/Modern Fantasy Character Options.tex}
 \include{src/Modern Fantasy Rules/modern Fantasy Rules.tex}
 
 % Modern Rules go below
@@ -249,6 +253,7 @@
 \include{src/Superhero Rules/Popular Heroes in the Cypher System.tex}
 \include{src/Superhero Rules/Power Source.tex}
 \include{src/Superhero Rules/Superhero Character Options.tex}
+\include{src/Superhero Rules/Optional Superhero Rules.tex}
 
 % Horror Rules Go below
 
@@ -256,6 +261,7 @@
 \include{src/Horror Rules/Horror Bestiary.tex}
 \include{src/Horror Rules/Horror Artifacts and Cyphers.tex}
 \include{src/Horror Rules/Horror Ending.tex}
+% \include{src/Horror Rules/Optional Rules for Horror 2.tex}
 
 % Romance Rules go below
 
@@ -264,6 +270,7 @@
 % Post-apo goes below
 
 \include{src/Post-Apocaliptic Rules/Beginning.tex}
+\include{src/POst-Apocaliptic Rules/Post-Apo Character Options.tex}
 \include{src/Post-Apocaliptic Rules/Post-Apo Bestiary.tex}
 \include{src/Post-Apocaliptic Rules/Additional Post-Apocaliptic Equipment.tex}
 \include{src/Post-Apocaliptic Rules/Scavenging.tex}
@@ -275,8 +282,10 @@
 % Fairy tales go below
 
 \include{src/Fairy Tales Rules/Beginning.tex}
+\include{src/Fairy Tales Rules/Fairytale Character Options.tex}
 \include{src/Fairy Tales Rules/Fairy Tales Bestiary.tex}
 \include{src/Fairy Tales Rules/Fairy Tale Artifacts.tex} %%% DOPISAĆ TABELĘ %%%
+\include{src/Fairy Tales Rules/Optional Rules for Fairytale.tex} 
 
 % Historical Rules go below
 \include{src/Historical Rules/Beginning.tex}
@@ -286,7 +295,11 @@
 
 %Weird West Rules go below
 
+\part{Weird West Rules}
+
+\include{src/Weird West Rules/Weird West Character Options.tex}
 \include{src/Weird West Rules/Weird West.tex}
+\include{src/Weird West Rules/Weird West Bestiary.tex}
 
 % Cyphers go below
 
@@ -313,6 +326,7 @@
 \printindex[CoreCre]
 \printindex[SFCre]
 \printindex[HorrorCre]
+\printindex[WWCre]
 \printindex[AllCre]
 \printindex[CnA]
 
