@@ -1,4 +1,16 @@
+% SUPERHERO RULES _ SUPERPOWERED CREATURES TABLE
+
 \documentclass[a4paper,10pt,openright]{book}
+
+% \begingroup
+% \catcode`\%=12
+% \global\chardef\outputpenalty=10000
+% \global\chardef\lastpenalty=0
+% \global\chardef\maxdeadcycles=100
+% \global\chardef\writearea=64 % Zwiększenie obszaru zapisu (kluczowe!)
+% \global\chardef\jobname=0 % Zmniejszenie zużycia
+% \endgroup
+
 \usepackage[T1]{fontenc} 
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -22,6 +34,8 @@
 % \usepackage[flushleft]{threeparttable}
 \usepackage{ltxtable} 
 \usepackage{xltabular}
+\usepackage{scrwfile}
+
 
 \graphicspath{ {./div/} }
 
@@ -73,7 +87,10 @@
 \makeindex[name= AllCre, title=All Creatures Index, intoc]
 \makeindex[name= CnA, title=Cyphers and Artifacts Index, intoc]
 \makeindex[name= Abi, title=Abilities Index, intoc]
-\makeindex[name= WWCre, title= Weird West Creatures Index, intoc]
+\makeindex[name= WWCre, title=Weird West Creatures Index, intoc]
+\makeindex[name= MFCre, title=Modern Fantasy Creatures Index, intoc]
+\makeindex[name= ApoCre, title=Apocalypse Creatures Index, intoc]
+\makeindex[name= FanCre, title=Fantasy Creatures Index, intoc]
 
 \newcommand{\myability }[1] {{\textbf{#1}\index{Abilities!Alphabetic!#1}\index[Abi]{#1}\label{sec:#1}}}
 
@@ -219,6 +236,7 @@
 
 \include{src/Modern Fantasy Rules/Modern Fantasy Character Options.tex}
 \include{src/Modern Fantasy Rules/modern Fantasy Rules.tex}
+\include{src/Modern Fantasy Rules/Modern Fantasy Bestiary.tex}
 
 % Modern Rules go below
 
@@ -272,6 +290,7 @@
 \include{src/Post-Apocaliptic Rules/Beginning.tex}
 \include{src/POst-Apocaliptic Rules/Post-Apo Character Options.tex}
 \include{src/Post-Apocaliptic Rules/Post-Apo Bestiary.tex}
+\include{src/Post-Apocaliptic Rules/Post-Apo Bestiary 2.tex}
 \include{src/Post-Apocaliptic Rules/Additional Post-Apocaliptic Equipment.tex}
 \include{src/Post-Apocaliptic Rules/Scavenging.tex}
 \include{src/Post-Apocaliptic Rules/Post-Apo Artifacts.tex}
@@ -319,13 +338,16 @@
 
 \part{Appendices}
 
-\listoftables
+\listoftables % exceeds limit, cannot do much about it :(
 
 \printindex
 \printindex[Abi]
 \printindex[CoreCre]
+\printindex[FanCre]
+\printindex[MFCre]
 \printindex[SFCre]
 \printindex[HorrorCre]
+\printindex[ApoCre]
 \printindex[WWCre]
 \printindex[AllCre]
 \printindex[CnA]
